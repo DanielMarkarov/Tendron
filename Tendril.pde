@@ -1,8 +1,10 @@
-class Tendril
+public class Tendril
 {
   public final static int SEG_LENGTH = 4; //length of each segment in the tendril
   private int myNumSegments, myX, myY;
   private double myAngle;
+  private float color1 = (float)Math.random()*255-40;
+  private int valoo;
   
   /**
    Class constructor
@@ -10,12 +12,39 @@ class Tendril
    theta is tendril starting angle in radians 
    x, y  is the starting (x,y) coordinate
    */
-  public Tendril(int len, double theta, int x, int y)
+  public Tendril(int len, double theta, int x, int y, int value)
   {
-    //your code here
+    myX = x;
+    myY = y;
+    myAngle = theta;
+    myNumSegments = len;
+    valoo = value;
+    show();
   }
   public void show()
   {
-    //your code here
+    double startX = myX;
+    double startY = myY;
+    double endX;
+    double endY;
+    double randomness = Math.random()*0.6+0.8;
+    for(int i = 0; i < myNumSegments; i++)
+    {
+      strokeWeight(valoo*2);
+      stroke(color1 - 20, color1, color1 -10);
+      myAngle += Math.random()*0.4*randomness-0.4;
+      randomness+= 0.01;
+      endX = startX + Math.cos(myAngle)*SEG_LENGTH;
+      endY = startY + Math.sin(myAngle)*SEG_LENGTH;
+      line((float)startX, (float)startY, (float)endX, (float)endY);
+      startX = endX;
+      startY = endY;
+      
+      if(condition<15 && i == myNumSegments-1)
+      {
+        condition++;
+        Cluster k = new Cluster(myNumSegments*999/1000, (int)endX, (int)endY, valoo++);
+      }
+    }
   }
 }
