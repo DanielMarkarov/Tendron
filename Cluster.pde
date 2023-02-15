@@ -1,9 +1,17 @@
+
+
 public class Cluster
 {
     public final static int NUM_STEMS = 7; //number of tendrils per cluster
 
-    public Cluster(int len, int x, int y)
+    public Cluster(int len, int x, int y, int value)
     {
-        // your code here
+        Tendril tendie1 = new Tendril(len*2, 0, x, y, value);
+        Tendril tendie2 = new Tendril(len, PI*2/3, x, y, value);
+        Tendril tendie3 = new Tendril(len, 4*PI/3, x, y, value);
+        //Tendril tendie4 = new Tendril(len, 0, x, y);
+        //Tendril tendie5 = new Tendril(len, 0, x, y);
+        //Tendril tendie6 = new Tendril(len, 0, x, y);
+        //Tendril tendie7 = new Tendril(len, 0, x, y);
     }
 }
