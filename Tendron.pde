@@ -2,7 +2,7 @@ public int condition = 0;
 
 public void setup()
 {
-  size(500, 500);  
+  size(300, 300);  
   background(0);
   noLoop();
 }
@@ -10,7 +10,7 @@ public void setup()
 public void draw()
 {
   background(255);
-  Cluster c = new Cluster(10, 250, 250, 1); // initial number of segments in the tendril and starting (x,y) coordinate
+  Cluster c = new Cluster(10, 150, 150, 1); // initial number of segments in the tendril and starting (x,y) coordinate
 }
 public void mousePressed()
 {
