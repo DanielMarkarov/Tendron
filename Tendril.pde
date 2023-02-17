@@ -25,7 +25,7 @@ public class Tendril
   {
     noStroke();
     fill(#FA1919);
-    ellipse(myX, myY, 2, 2);
+    ellipse(myX, myY, 5, 5);
     double startX = myX;
     double startY = myY;
     double endX;
@@ -33,7 +33,7 @@ public class Tendril
     double randomness = Math.random()*0.6+0.8;
     for(int i = 0; i < myNumSegments; i++)
     {
-      strokeWeight(valoo);
+      strokeWeight(valoo*2);
       stroke(color1 - 20, color1, color1 -10);
       myAngle += Math.random()*0.4*randomness-0.4;
       randomness+= 0.01;
