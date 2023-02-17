@@ -23,6 +23,9 @@ public class Tendril
   }
   public void show()
   {
+    noStroke();
+    fill(#FA1919);
+    ellipse(myX, myY, 2, 2);
     double startX = myX;
     double startY = myY;
     double endX;
